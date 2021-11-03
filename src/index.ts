@@ -12,7 +12,7 @@ export class FakeRandom<I = any> {
     let index = 0
     const strArr = ctx.split('')
     strArr.forEach((str) => {
-      const strIndex = Number(escape(str).replace(/^%u/, ''))
+      const strIndex = str.charCodeAt(0)
       if (!isNaN(strIndex)) {
         index += strIndex
       }
